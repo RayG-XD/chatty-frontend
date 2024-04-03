@@ -6,12 +6,12 @@ version: 2.1
 executors:
   app-executor:
     docker:
-      - image: cimg/node:18.17.1
+      - image: cimg/node:20.4.0
       - image: 'cibuilds/base:latest'
     working_directory: ~/repo
   terraform-executor:
     docker:
-      - image: hashicorp/terraform:latest
+      - image: hashicorp/terraform:1.6.5
       - image: 'cibuilds/base:latest'
   slack-executor:
     docker:
@@ -208,7 +208,7 @@ jobs:
             npm run build
             echo "Build successful"
             # For the bucket name here, use the variable prefix inside your variables.tf file
-            aws --region ap-south-1 s3 cp build s3://edustic-chatapp-client-${CIRCLE_BRANCH}-app --recursive
+            aws --region ap-south-1 s3 cp build s3://edustic-client-${CIRCLE_BRANCH}-app --recursive
       - *notify-on-fail
 
   aws-cloudfront-distribution:

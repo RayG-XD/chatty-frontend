@@ -8,13 +8,13 @@ variable "global_region" {
 variable "prefix" {
   type        = string
   description = "Prefix to be added to the AWS resources tags"
-  default     = "edustic-chatapp-client"
+  default     = "edustic-client"
 }
 
 variable "project" {
   type        = string
   description = "Prefix to be added to the AWS local tags"
-  default     = "edustic-chatapp-client"
+  default     = "edustic-client"
 }
 
 variable "main_client_app_domain" {
