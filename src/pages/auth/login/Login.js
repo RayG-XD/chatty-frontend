@@ -92,7 +92,7 @@ const Login = () => {
           </label>
         </div>
         <Button
-          label={`${loading ? 'SIGNIN IN PROGRESS...' : 'SIGN IN'}`}
+          label={`${loading ? 'SIGNIN IN PROGRESS...' : 'SIGNIN'}`}
           className="auth-button button"
           disabled={!username || !password}
         />
